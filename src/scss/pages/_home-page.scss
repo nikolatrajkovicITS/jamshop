@@ -1,3 +1,15 @@
+.product-section-title {
+  font-size: 24px;
+  color: white;
+  font-weight: 800;
+
+  &-sub {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--color-grey);
+  }
+}
+
 .products {
   display: flex;
   overflow-y: auto;
@@ -8,7 +20,7 @@
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  margin-bottom: 40px;
+  margin: 25px 0 40px 0;
 
   &::-webkit-scrollbar {
     width: 0;

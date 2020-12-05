@@ -1,15 +1,40 @@
 .product-card {
-  flex: 0 0 21%;
-  max-width: 21%;
+  flex: 0 0 25%;
+  max-width: 25%;
   height: auto;
-  min-height: 270;
-  padding: 15px;
-  margin: 0 32px;
+  min-height: 280px;
+  padding-right: 60px;
   scroll-snap-align: start;
-  border: 2px solid white;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 9px 60px 0 rgba(218, 54, 84, 0.35);
+  }
+
+  @include responsive(medium) {
+    flex: 0 0 33.3%;
+    max-width: 33.3%;
+    padding-left: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  @include responsive(tablet) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @include responsive(small) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: unset;
+  }
+
+  &-body {
+    padding: 15px;
+    border: 2px solid white;
   }
 
   &-img {
@@ -20,6 +45,7 @@
   &-title {
     font-size: 18px;
     font-weight: 800;
+    margin-top: 20px;
     color: white;
     text-transform: uppercase;
     text-decoration: none !important;
@@ -27,6 +53,7 @@
 
   &-description {
     font-size: 14px;
+    margin-top: 10px;
     color: var(--color-grey);
     text-decoration: none !important;
   }
