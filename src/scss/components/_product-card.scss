@@ -3,7 +3,7 @@
   max-width: 25%;
   height: auto;
   min-height: 280px;
-  padding-right: 60px;
+  padding-right: 40px;
   scroll-snap-align: start;
   cursor: pointer;
 
@@ -34,7 +34,7 @@
 
   &-body {
     padding: 15px;
-    border: 2px solid white;
+    border: 2px solid var(--color-white);
   }
 
   &-img {
@@ -46,15 +46,17 @@
     font-size: 18px;
     font-weight: 800;
     margin-top: 20px;
-    color: white;
+    color: var(--color-white);
     text-transform: uppercase;
-    text-decoration: none !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &-description {
     font-size: 14px;
     margin-top: 10px;
     color: var(--color-grey);
-    text-decoration: none !important;
   }
 }

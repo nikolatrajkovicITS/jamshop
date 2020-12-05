@@ -1,15 +1,16 @@
 /** @jsx jsx */
 import React, { useRef } from "react"
 import { jsx, Styled } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
+
 import { Row, Col } from "../../Grid"
 import ProductCard from "../../Common/ProductCard"
 
 import HeroBackground from "../../../images/elements/hero_background.svg"
 import HeroImage from "../../../images/elements/monitor.svg"
 import HeroDecor from "../../../images/elements/hero_decor.svg"
-import { useStaticQuery, graphql } from "gatsby"
 
-function HomepageHero(props) {
+function HomepageHero() {
   const productsRef = useRef()
 
   const { site } = useStaticQuery(graphql`
@@ -44,12 +45,19 @@ function HomepageHero(props) {
             <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
           </Col>
           <Col styles={styles.leadWrapper}>
-            <Styled.h1 sx={styles.heading}>
+            <Styled.h1 sx={styles.heading} className="text-shadow ">
               Don't waste time
               <br />
               on boring things
             </Styled.h1>
-            <button sx={{ variant: "button.primary", mx: ["auto", null, 0] }}>
+            <button
+              sx={{
+                variant: "button.primary",
+                mx: ["auto", null, 0],
+                marginTop: 40,
+              }}
+              className="glow-on-hover"
+            >
               GO EXPLORE
             </button>
           </Col>
@@ -59,12 +67,22 @@ function HomepageHero(props) {
 
       <section ref={productsRef}>
         <div>
+          <p className="product-section-title"> Explore community choices </p>
+          <p className="product-section-title-sub">
+            Updated daily based on most popular choices among dev community
+          </p>
+        </div>
+        <div>
           <button onClick={() => scrollProducts(false)}>Left</button>
           <button onClick={() => scrollProducts(true)}>Right</button>
         </div>
         <div className="products">
           {site.siteMetadata.data.map(product => (
-            <ProductCard key={product.name} {...product} />
+            <ProductCard
+              key={product.name}
+              product={product}
+              redirectUrl={`/products/${product.slug.trim()}`}
+            />
           ))}
         </div>
       </section>

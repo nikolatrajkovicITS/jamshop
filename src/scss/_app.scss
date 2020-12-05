@@ -1,6 +1,7 @@
 /* Base  */
 @import "./base/_mixins";
 @import "./base/_variables";
+@import "./_general";
 
 /* Components  */
 @import "./components/_product-card";
@@ -8,3 +9,6 @@
 
 /* Icons  */
 @import "./_material-icons";
+
+/* Shared Classes  */
+@import "./shared";

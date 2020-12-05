@@ -1,29 +1,50 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
+
 import cardImg from "../../../images/products/dumy.svg"
 
-export default ({ name, slug, excerpt, imageUrl }) => {
-  const redirectUrl = `/products/${slug.trim()}`
+export default ({ product, redirectUrl, handleClick }) => {
+  const { name, excerpt } = product
+
+  const handleRedirect = url => {
+    navigate(url)
+  }
+
+  const handleBtnClick = e => {
+    e.stopPropagation()
+    // handleClick(product)
+  }
 
   return (
-    <article className="product-card">
-      <Link to={redirectUrl}>
-        <img
-          className="product-card-img"
-          src={cardImg}
-          alt="product"
-          sx={{ maxWidth: "1" }}
-        />
+    <article
+      className="product-card"
+      onClick={() => handleRedirect(redirectUrl)}
+    >
+      <div className="product-card-body">
         <div>
-          <div>
-            <p className="product-card-title">{name}</p>
-          </div>
-
-          <h1 className="product-card-description"> {excerpt}</h1>
+          <img
+            className="product-card-img"
+            src={cardImg}
+            alt="product"
+            sx={{ maxWidth: "1" }}
+          />
         </div>
-      </Link>
+        <div>
+          <p className="product-card-title" title={name}>
+            {name}
+          </p>
+          <p className="product-card-description">{excerpt}</p>
+        </div>
+        <div>
+          <div className="add-btn-wrapper">
+            <button className="add-btn" onClick={handleBtnClick}>
+              <span className="material-icons md-37 md-purply">add_circle</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </article>
   )
 }
