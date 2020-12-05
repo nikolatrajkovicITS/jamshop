@@ -1,0 +1,18 @@
+.products {
+  display: flex;
+  overflow-y: auto;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-points-x: repeat(100%);
+  scroll-snap-points-x: repeat(100%);
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  margin-bottom: 40px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* Chrome/Safari/Webkit */
+  }
+}

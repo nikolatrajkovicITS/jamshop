@@ -10,7 +10,7 @@ import HeroDecor from "../../../images/elements/hero_decor.svg"
 import { useStaticQuery, graphql } from "gatsby"
 
 function HomepageHero(props) {
-  const productsRef = React.createRef()
+  const productsRef = useRef()
 
   const { site } = useStaticQuery(graphql`
     {
@@ -32,13 +32,13 @@ function HomepageHero(props) {
       return
     }
     productsRef.current.scrollLeft = isRight
-      ? productsRef.current.scrollLeft + productsRef.current.scrollWidth
-      : productsRef.current.scrollLeft - productsRef.current.scrollWidth
+      ? productsRef.current.scrollLeft + productsRef.current.clientWidth
+      : productsRef.current.scrollLeft - productsRef.current.clientWidth
   }
 
   return (
     <>
-      <section sx={{ paddingTop: [60, 60, 105] }}>
+      <section sx={{ paddingTop: [60, 60, 105], height: "100vh" }}>
         <Row styles={{ justifyContent: ["center"] }}>
           <Col styles={styles.imgWrapper}>
             <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
@@ -62,11 +62,11 @@ function HomepageHero(props) {
           <button onClick={() => scrollProducts(false)}>Left</button>
           <button onClick={() => scrollProducts(true)}>Right</button>
         </div>
-        <Row styles={styles.productCards}>
+        <div className="products">
           {site.siteMetadata.data.map(product => (
             <ProductCard key={product.name} {...product} />
           ))}
-        </Row>
+        </div>
       </section>
     </>
   )
@@ -115,26 +115,5 @@ const styles = {
     right: 0,
     display: ["none", null, "block"],
     zIndex: -1,
-  },
-
-  productCards: {
-    width: "100%",
-    display: "flex",
-    flexWrap: "nowrap",
-    overflowY: "auto",
-    overflowX: "scroll",
-    marginTop: 50,
-    webkitScrollSnapType: "mandatory",
-    scrollSnapType: "x mandatory",
-    webkitScrollSnapPointsX: "repeat(100%)",
-    scrollSnapPointsX: "repeat(100%)",
-    scrollBehavior: "smooth",
-    scrollbarWidth: "none" /* Firefox */,
-    msOverflowStyle: "none" /* IE 10+ */,
-    "::-webkit-scrollbar": {
-      width: 0,
-      height: 0,
-      background: "transparent" /* Chrome/Safari/Webkit */,
-    },
   },
 }
