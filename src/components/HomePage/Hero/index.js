@@ -73,8 +73,12 @@ function HomepageHero() {
           </p>
         </div>
         <div>
-          <button onClick={() => scrollProducts(false)}>Left</button>
-          <button onClick={() => scrollProducts(true)}>Right</button>
+          <button onClick={() => scrollProducts(false)} type="button">
+            Left
+          </button>
+          <button onClick={() => scrollProducts(true)} type="button">
+            Right
+          </button>
         </div>
         <div className="products">
           {site.siteMetadata.data.map(product => (

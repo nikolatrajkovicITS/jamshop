@@ -39,7 +39,7 @@ export default ({ product, redirectUrl, handleClick }) => {
         </div>
         <div>
           <div className="add-btn-wrapper">
-            <button className="add-btn" onClick={handleBtnClick}>
+            <button className="add-btn" onClick={handleBtnClick} type="button">
               <span className="material-icons md-37 md-purply">add_circle</span>
             </button>
           </div>
