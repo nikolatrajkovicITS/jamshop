@@ -5,7 +5,7 @@ import onClickOutside from "react-onclickoutside"
 
 import cardImg from "../../../images/products/dumy.svg"
 
-const ShoppingCart = ({ products }) => {
+function ShoppingCart({ products }) {
   const [showCart, setShowCart] = useState(false)
 
   function toggleCart(isShown) {
