@@ -1,0 +1,82 @@
+.products-section-title {
+  font-size: 28px;
+  color: var(--color-white);
+  font-weight: 700;
+
+  &-sub {
+    font-size: 16px;
+    color: #c3c1c4;
+    margin-top: 10px;
+  }
+}
+
+.products {
+  display: flex;
+  overflow-y: auto;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-points-x: repeat(100%);
+  scroll-snap-points-x: repeat(100%);
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  margin: 35px 0 40px 0;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* Chrome/Safari/Webkit */
+  }
+}
+
+.arrow-btns-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.arrow-btn {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid var(--color-white);
+    box-shadow: 4px 9px 60px 4px rgba(218, 54, 84, 0.35);
+  }
+
+  &-left {
+    left: -65px;
+    top: 150px;
+
+    @include responsive(tablet-large) {
+      left: -40px;
+    }
+
+    @include responsive(small) {
+      left: 10px;
+      top: 145px;
+    }
+  }
+
+  &-right {
+    right: -25px;
+    top: 150px;
+
+    @include responsive(tablet-large) {
+      right: -7px;
+    }
+
+    @include responsive(small) {
+      right: 10px;
+      top: 145px;
+    }
+  }
+}

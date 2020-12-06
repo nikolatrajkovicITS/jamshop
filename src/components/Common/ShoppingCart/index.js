@@ -43,25 +43,27 @@ const ShoppingCart = ({ products }) => {
       {showCart && (
         <div className="cart">
           <div>
-            {products && products.length > 0
-              ? products.map(({ name, price }) => (
+            {products && products.length > 0 ? (
+              products.map(({ name, price }, i) => (
                 <div className="cart-product" key={name}>
                   <img src={cardImg} alt="Product" className="cart-image" />
                   <p className="cart-title" title={name}>
-                    {name}
+                    {name} #{i + 1}
                   </p>
                   <p className="cart-price" title={price}>
-                    {price}
+                    ${price}
                   </p>
                 </div>
               ))
-              : "Your cart is empty"}
+            ) : (
+              <p className="cart-empty-msg">Your cart is empty</p>
+            )}
           </div>
           <div className="cart-btn">
             <button
               sx={{
                 variant: "button.primary",
-                padding: "4px 14px 4px",
+                padding: "6px 14px 6px",
                 fontSize: 12,
               }}
               type="submit"

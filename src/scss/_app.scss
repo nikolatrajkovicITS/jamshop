@@ -3,17 +3,17 @@
 @import "./base/_variables";
 @import "./_general";
 
-/* Components  */
-@import "./components/_product-card";
-@import "./components/_shopping-cart";
-@import "./components/_header";
-
-/* Pages  */
-@import "./pages/_home-page";
-@import "./pages/_product";
-
 /* Icons  */
 @import "./_material-icons";
+
+/* Pages  */
+@import "./pages/_product-page";
+
+/* Components  */
+@import "./components/_header";
+@import "./components/_products-list";
+@import "./components/_product-card";
+@import "./components/_shopping-cart";
 
 /* Shared Classes  */
 @import "./shared";

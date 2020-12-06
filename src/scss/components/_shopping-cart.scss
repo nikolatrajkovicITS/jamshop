@@ -22,9 +22,9 @@
   right: 0;
   padding: 15px;
   width: auto;
-  min-width: 190px;
+  min-width: 261px;
   height: auto;
-  min-height: 170px;
+  min-height: 276px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,21 +43,30 @@
   }
 
   &-image {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 26px;
   }
 
   &-title {
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 700;
     padding: 0 5px;
+    text-transform: uppercase;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-width: 60%;
   }
 
   &-price {
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &-empty-msg {
+    text-align: center;
+    margin-top: 10px;
   }
 
   &-btn {
