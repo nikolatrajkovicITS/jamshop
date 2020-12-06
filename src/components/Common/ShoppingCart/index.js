@@ -1,21 +1,24 @@
 /** @jsx jsx */
 import React, { useState } from "react"
 import { jsx } from "theme-ui"
+import onClickOutside from "react-onclickoutside"
 
 import cardImg from "../../../images/products/dumy.svg"
 
-export default ({ products }) => {
+const ShoppingCart = ({ products }) => {
   const [showCart, setShowCart] = useState(false)
 
-  const toggleCart = () => {
-    setShowCart(!showCart)
+  const toggleCart = isShown => {
+    setShowCart(isShown)
   }
 
+  ShoppingCart.handleClickOutside = () => toggleCart(false)
+
   return (
-    <>
+    <div>
       <div>
         <button
-          onClick={toggleCart}
+          onClick={() => toggleCart(!showCart)}
           className="shopping-cart-btn"
           type="button"
         >
@@ -45,6 +48,14 @@ export default ({ products }) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
+
+const clickOutsideConfig = {
+  handleClickOutside: () => ShoppingCart.handleClickOutside,
+}
+
+ShoppingCart.prototype = {}
+
+export default onClickOutside(ShoppingCart, clickOutsideConfig)
