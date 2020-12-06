@@ -39,7 +39,7 @@ function HomepageHero() {
 
   return (
     <>
-      <section sx={{ paddingTop: [60, 60, 105], height: "100vh" }}>
+      <section sx={{ paddingTop: [60, 60, 105], marginBottom: 70 }}>
         <Row styles={{ justifyContent: ["center"] }}>
           <Col styles={styles.imgWrapper}>
             <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />

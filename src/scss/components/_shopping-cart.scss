@@ -9,6 +9,16 @@
     cursor: pointer;
     z-index: 99;
   }
+
+  &-arrow-icon {
+    position: absolute;
+    top: 5px;
+    margin-left: 1px;
+
+    @include responsive(tablet-small) {
+      color: var(--color-white);
+    }
+  }
 }
 
 .cart {

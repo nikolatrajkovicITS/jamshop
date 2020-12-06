@@ -8,7 +8,7 @@ import cardImg from "../../../images/products/dumy.svg"
 const ShoppingCart = ({ products }) => {
   const [showCart, setShowCart] = useState(false)
 
-  const toggleCart = isShown => {
+  function toggleCart(isShown) {
     setShowCart(isShown)
   }
 
@@ -25,11 +25,17 @@ const ShoppingCart = ({ products }) => {
           type="button"
         >
           <span className="material-icons md-34 md-white">shopping_cart</span>
+
           {itemsCounter > 0 && (
             <span className="items-notification">
               {itemsCounter > 9 ? "9+" : itemsCounter}
             </span>
           )}
+
+          <span className="material-icons md-19 shopping-cart-arrow-icon">
+            {showCart ? "expand_less" : "expand_more"}
+          </span>
+
           {showCart && <div className="background-blur" />}
         </button>
       </div>
