@@ -1,99 +1,40 @@
 /** @jsx jsx */
-import React, { useRef } from "react"
+import React from "react"
 import { jsx, Styled } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
 
 import { Row, Col } from "../../Grid"
-import ProductCard from "../../Common/ProductCard"
 
 import HeroBackground from "../../../images/elements/hero_background.svg"
 import HeroImage from "../../../images/elements/monitor.svg"
 import HeroDecor from "../../../images/elements/hero_decor.svg"
 
-function HomepageHero({ handleAddProduct }) {
-  const productsRef = useRef()
-
-  const { site } = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          data {
-            name
-            slug
-            excerpt
-            imageUrl
-            price
-          }
-        }
-      }
-    }
-  `)
-
-  const scrollProducts = isRight => {
-    if (!productsRef) {
-      return
-    }
-    productsRef.current.scrollLeft = isRight
-      ? productsRef.current.scrollLeft + productsRef.current.clientWidth
-      : productsRef.current.scrollLeft - productsRef.current.clientWidth
-  }
-
+function HomepageHero() {
   return (
-    <>
-      <section sx={{ paddingTop: [60, 60, 105] }}>
-        <Row styles={{ justifyContent: ["center"] }}>
-          <Col styles={styles.imgWrapper}>
-            <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
-          </Col>
-          <Col styles={styles.leadWrapper}>
-            <Styled.h1 sx={styles.heading} className="text-shadow ">
-              Don't waste time
-              <br />
-              on boring things
-            </Styled.h1>
-            <button
-              sx={{
-                variant: "button.primary",
-                mx: ["auto", null, 0],
-                marginTop: 40,
-              }}
-              className="glow-on-hover"
-            >
-              GO EXPLORE
-            </button>
-          </Col>
-        </Row>
-        <img src={HeroBackground} sx={styles.backgroundImg} />
-      </section>
-
-      {/* TODO: Odvojiti ovo u posebnu komponentu */}
-      <section ref={productsRef} sx={{ marginTop: 70 }}>
-        <div>
-          <p className="product-section-title"> Explore community choices </p>
-          <p className="product-section-title-sub">
-            Updated daily based on most popular choices among dev community
-          </p>
-        </div>
-        <div>
-          <button onClick={() => scrollProducts(false)} type="button">
-            Left
+    <section sx={{ paddingTop: [60, 60, 105] }}>
+      <Row styles={{ justifyContent: ["center"] }}>
+        <Col styles={styles.imgWrapper}>
+          <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
+        </Col>
+        <Col styles={styles.leadWrapper}>
+          <Styled.h1 sx={styles.heading} className="text-shadow ">
+            Don't waste time
+            <br />
+            on boring things
+          </Styled.h1>
+          <button
+            sx={{
+              variant: "button.primary",
+              mx: ["auto", null, 0],
+              marginTop: 40,
+            }}
+            className="glow-on-hover"
+          >
+            GO EXPLORE
           </button>
-          <button onClick={() => scrollProducts(true)} type="button">
-            Right
-          </button>
-        </div>
-        <div className="products">
-          {site.siteMetadata.data.map(product => (
-            <ProductCard
-              key={product.name}
-              product={product}
-              handleClick={handleAddProduct}
-              redirectUrl={`/products/${product.slug}`}
-            />
-          ))}
-        </div>
-      </section>
-    </>
+        </Col>
+      </Row>
+      <img src={HeroBackground} sx={styles.backgroundImg} />
+    </section>
   )
 }
 

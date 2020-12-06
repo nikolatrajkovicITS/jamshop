@@ -3,6 +3,8 @@ import React, { useState } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Hero from "../components/HomePage/Hero"
+import Products from "../components/HomePage/Products"
+
 import { Container } from "../components/Grid"
 
 export default function IndexPage() {
@@ -18,7 +20,8 @@ export default function IndexPage() {
     <Layout products={products}>
       <SEO title="Home" />
       <Container>
-        <Hero handleAddProduct={handleAddProduct} />
+        <Hero />
+        <Products handleAddProduct={handleAddProduct} />
       </Container>
     </Layout>
   )

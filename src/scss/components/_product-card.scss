@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 9px 60px 0 rgba(218, 54, 84, 0.35);
+    transform: translateY(1px);
   }
 
   @include responsive(medium) {
