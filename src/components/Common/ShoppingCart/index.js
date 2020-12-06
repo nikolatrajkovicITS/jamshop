@@ -14,6 +14,8 @@ const ShoppingCart = ({ products }) => {
 
   ShoppingCart.handleClickOutside = () => toggleCart(false)
 
+  const itemsCounter = (products && products.length) || 0
+
   return (
     <div>
       <div>
@@ -23,8 +25,15 @@ const ShoppingCart = ({ products }) => {
           type="button"
         >
           <span className="material-icons md-34 md-white">shopping_cart</span>
+          {itemsCounter > 0 && (
+            <span className="items-notification">
+              {itemsCounter > 9 ? "9+" : itemsCounter}
+            </span>
+          )}
+          {showCart && <div className="background-blur" />}
         </button>
       </div>
+
       {showCart && (
         <div className="cart">
           <div>
@@ -55,7 +64,5 @@ const ShoppingCart = ({ products }) => {
 const clickOutsideConfig = {
   handleClickOutside: () => ShoppingCart.handleClickOutside,
 }
-
-ShoppingCart.prototype = {}
 
 export default onClickOutside(ShoppingCart, clickOutsideConfig)

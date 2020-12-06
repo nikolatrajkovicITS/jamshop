@@ -7,6 +7,7 @@
     border: none;
     margin-right: 20px;
     cursor: pointer;
+    z-index: 99;
   }
 }
 
@@ -26,6 +27,7 @@
   background-color: var(--theme-ui-colors-background-primary, #1c042e);
   -webkit-box-shadow: 2px 2px 15px 0px #000000;
   box-shadow: 2px 2px 15px 0px #000000;
+  z-index: 99;
 
   &-product {
     display: flex;
