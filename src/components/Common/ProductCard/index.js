@@ -5,7 +5,7 @@ import { navigate } from "gatsby"
 
 import cardImg from "../../../images/products/dumy.svg"
 
-export default ({ product, redirectUrl, handleClick }) => {
+export default ({ product, redirectUrl, handleClick, productRef }) => {
   const { name, excerpt } = product
 
   const handleRedirect = url => {
@@ -21,6 +21,7 @@ export default ({ product, redirectUrl, handleClick }) => {
     <article
       className="product-card"
       onClick={() => handleRedirect(redirectUrl)}
+      ref={productRef}
     >
       <div className="product-card-body">
         <div>

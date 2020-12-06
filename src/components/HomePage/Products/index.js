@@ -6,7 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import ProductCard from "../../Common/ProductCard"
 
 function Products({ handleAddProduct }) {
-  const productsRef = useRef()
+  const productsListRef = useRef()
+  const productRef = useRef()
 
   const { site } = useStaticQuery(graphql`
     {
@@ -26,12 +27,12 @@ function Products({ handleAddProduct }) {
 
   const scrollProducts = (e, isRight) => {
     e.stopPropagation()
-    if (!productsRef) {
+    if (!productsListRef) {
       return
     }
-    productsRef.current.scrollLeft = isRight
-      ? productsRef.current.scrollLeft + productsRef.current.clientWidth
-      : productsRef.current.scrollLeft - productsRef.current.clientWidth
+    productsListRef.current.scrollLeft = isRight
+      ? productsListRef.current.scrollLeft + productRef.current.offsetWidth
+      : productsListRef.current.scrollLeft - productRef.current.offsetWidth
   }
 
   return (
@@ -58,11 +59,12 @@ function Products({ handleAddProduct }) {
           <span className="material-icons md-33">keyboard_arrow_right</span>
         </button>
       </div>
-      <div className="products" ref={productsRef}>
+      <div className="products" ref={productsListRef}>
         {site.siteMetadata.data.map(product => (
           <ProductCard
             key={product.name}
             product={product}
+            productRef={productRef}
             handleClick={handleAddProduct}
             redirectUrl={`/products/${product.slug}`}
           />
