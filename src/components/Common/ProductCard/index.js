@@ -14,7 +14,7 @@ export default ({ product, redirectUrl, handleClick }) => {
 
   const handleBtnClick = e => {
     e.stopPropagation()
-    // handleClick(product)
+    handleClick(product)
   }
 
   return (

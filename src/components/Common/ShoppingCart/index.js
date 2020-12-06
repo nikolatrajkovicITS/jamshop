@@ -26,13 +26,13 @@ const ShoppingCart = ({ products }) => {
         >
           <span className="material-icons md-34 md-white">shopping_cart</span>
 
-          {itemsCounter > 0 && (
-            <span className="items-notification">
-              {itemsCounter > 9 ? "9+" : itemsCounter}
-            </span>
-          )}
+          <span
+            className={`items-notification ${!itemsCounter && "black-color"}`}
+          >
+            {itemsCounter > 9 ? "9+" : itemsCounter}
+          </span>
 
-          <span className="material-icons md-19 shopping-cart-arrow-icon">
+          <span className="material-icons md-19 md-white shopping-cart-arrow-icon">
             {showCart ? "expand_less" : "expand_more"}
           </span>
 
@@ -43,11 +43,19 @@ const ShoppingCart = ({ products }) => {
       {showCart && (
         <div className="cart">
           <div>
-            <div className="cart-product">
-              <img src={cardImg} alt="Product" className="cart-image" />
-              <p className="cart-title">Title product</p>
-              <p className="cart-price">Price 123$</p>
-            </div>
+            {products && products.length > 0
+              ? products.map(({ name, price }) => (
+                <div className="cart-product" key={name}>
+                  <img src={cardImg} alt="Product" className="cart-image" />
+                  <p className="cart-title" title={name}>
+                    {name}
+                  </p>
+                  <p className="cart-price" title={price}>
+                    {price}
+                  </p>
+                </div>
+              ))
+              : "Your cart is empty"}
           </div>
           <div className="cart-btn">
             <button

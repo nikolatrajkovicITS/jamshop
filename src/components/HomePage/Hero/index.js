@@ -10,7 +10,7 @@ import HeroBackground from "../../../images/elements/hero_background.svg"
 import HeroImage from "../../../images/elements/monitor.svg"
 import HeroDecor from "../../../images/elements/hero_decor.svg"
 
-function HomepageHero() {
+function HomepageHero({ handleAddProduct }) {
   const productsRef = useRef()
 
   const { site } = useStaticQuery(graphql`
@@ -22,6 +22,7 @@ function HomepageHero() {
             slug
             excerpt
             imageUrl
+            price
           }
         }
       }
@@ -39,7 +40,7 @@ function HomepageHero() {
 
   return (
     <>
-      <section sx={{ paddingTop: [60, 60, 105], marginBottom: 70 }}>
+      <section sx={{ paddingTop: [60, 60, 105] }}>
         <Row styles={{ justifyContent: ["center"] }}>
           <Col styles={styles.imgWrapper}>
             <img src={HeroImage} alt="Vector Monitor" sx={{ maxWidth: "1" }} />
@@ -65,7 +66,8 @@ function HomepageHero() {
         <img src={HeroBackground} sx={styles.backgroundImg} />
       </section>
 
-      <section ref={productsRef}>
+      {/* TODO: Odvojiti ovo u posebnu komponentu */}
+      <section ref={productsRef} sx={{ marginTop: 70 }}>
         <div>
           <p className="product-section-title"> Explore community choices </p>
           <p className="product-section-title-sub">
@@ -85,6 +87,7 @@ function HomepageHero() {
             <ProductCard
               key={product.name}
               product={product}
+              handleClick={handleAddProduct}
               redirectUrl={`/products/${product.slug.trim()}`}
             />
           ))}
