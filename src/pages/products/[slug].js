@@ -46,17 +46,20 @@ export default function Product({ params }) {
         <div className="product-details">
           <div>
             <p className="product-label">POPULAR</p>
-            <p className="product-name">{productData.name || "N/A"}</p>
+            <p className="product-name glowing-text">
+              {productData.name || "N/A"}
+            </p>
           </div>
           <p className="product-description">
             {productData.description || "N/A"}
           </p>
           <p className="product-price">${productData.price || "N/A"}</p>
-          <div className="product-btn">
+          <div>
             <button
               sx={{
                 variant: "button.primary",
               }}
+              className="product-btn"
             >
               ADD TO CART
             </button>
