@@ -1,17 +1,17 @@
 const dummyData = [
   {
     name: "Basic Dummy X",
-    slug: " basic-dummy-x",
+    slug: "basic-dummy-x",
     price: 49.99,
-    excerpt: " Something that you trully need, but haven’t know about it yet",
-    imageUrl: " images/products/dummy.svg",
+    excerpt: "Something that you trully need, but haven’t know about it yet",
+    imageUrl: "images/products/dummy.svg",
     description:
-      " Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
     tag: "starter",
   },
   {
     name: "Basic Dummy",
-    slug: " basic-dummy",
+    slug: "basic-dummy",
     price: 29.99,
     excerpt: "Something that you trully need, but haven’t know about it yet",
     imageUrl: "images/products/dummy.svg",
@@ -41,12 +41,12 @@ const dummyData = [
   },
   {
     name: "Great Dummy",
-    slug: " great-dummy",
+    slug: "great-dummy",
     price: 104.99,
     excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: " images/products/dummy.svg",
+    imageUrl: "images/products/dummy.svg",
     description:
-      " Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
     tag: "popular",
   },
 
@@ -68,7 +68,7 @@ const dummyData = [
     excerpt: "Something that you trully need, but haven’t know about it yet",
     imageUrl: "images/products/dummy.svg",
     description:
-      " Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
     tag: "popular",
   },
 ]

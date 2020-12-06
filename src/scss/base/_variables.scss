@@ -9,18 +9,13 @@
   --color-grey-2: #dde2e8a6;
   --color-grey-3: #cccdce;
   --color-grey-light: #dde2e8;
+  --color-grey-light-2: #c4c4c4;
 
   --color-red: #ff0050;
   --color-red-light: #ff4949;
-}
 
-$content-area-widths: (
-  "small": 90vw,
-  "tablet": 640px,
-  "medium": 870px,
-  "large": 1280px,
-  "ultra-large": 1700px,
-);
+  --color-yellow: #fbe067;
+}
 
 $breakpoints: (
   "mobile": (

@@ -88,7 +88,7 @@ function HomepageHero({ handleAddProduct }) {
               key={product.name}
               product={product}
               handleClick={handleAddProduct}
-              redirectUrl={`/products/${product.slug.trim()}`}
+              redirectUrl={`/products/${product.slug}`}
             />
           ))}
         </div>
