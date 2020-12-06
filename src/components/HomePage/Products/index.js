@@ -24,7 +24,8 @@ function Products({ handleAddProduct }) {
     }
   `)
 
-  const scrollProducts = isRight => {
+  const scrollProducts = (e, isRight) => {
+    e.stopPropagation()
     if (!productsRef) {
       return
     }
@@ -34,7 +35,7 @@ function Products({ handleAddProduct }) {
   }
 
   return (
-    <section ref={productsRef} sx={{ marginTop: 70 }}>
+    <section sx={{ marginTop: 70 }}>
       <div>
         <p className="products-section-title"> Explore community choices </p>
         <p className="products-section-title-sub">
@@ -43,21 +44,21 @@ function Products({ handleAddProduct }) {
       </div>
       <div className="arrow-btns-wrapper">
         <button
-          onClick={() => scrollProducts(false)}
+          onClick={e => scrollProducts(e, false)}
           className="arrow-btn arrow-btn-left"
           type="button"
         >
           <span className="material-icons md-33">keyboard_arrow_left</span>
         </button>
         <button
-          onClick={() => scrollProducts(true)}
+          onClick={e => scrollProducts(e, true)}
           className="arrow-btn arrow-btn-right"
           type="button"
         >
           <span className="material-icons md-33">keyboard_arrow_right</span>
         </button>
       </div>
-      <div className="products">
+      <div className="products" ref={productsRef}>
         {site.siteMetadata.data.map(product => (
           <ProductCard
             key={product.name}
