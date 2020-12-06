@@ -7,10 +7,6 @@
   scroll-snap-align: start;
   cursor: pointer;
 
-  &:hover {
-    transform: translateY(1px);
-  }
-
   @include responsive(medium) {
     flex: 0 0 33.3%;
     max-width: 33.3%;
@@ -57,6 +53,6 @@
   &-description {
     font-size: 14px;
     margin-top: 10px;
-    color: var(--color-grey-light-2);
+    color: var(--color-grey-light);
   }
 }

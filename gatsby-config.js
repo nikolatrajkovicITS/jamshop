@@ -1,84 +1,9 @@
-const dummyData = [
-  {
-    name: "Basic Dummy X",
-    slug: "basic-dummy-x",
-    price: 49.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "starter",
-  },
-  {
-    name: "Basic Dummy",
-    slug: "basic-dummy",
-    price: 29.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "starter",
-  },
-  {
-    name: "Dummy Club",
-    slug: "dummy-club",
-    price: 79.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "classic",
-  },
-  {
-    name: "Dummy X Pro",
-    slug: "dummy-x-pro",
-    price: 149.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "master",
-  },
-  {
-    name: "Great Dummy",
-    slug: "great-dummy",
-    price: 104.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "popular",
-  },
-
-  {
-    name: "Wooden Dummy Pro",
-    slug: "wooden-dummy-pro",
-    price: 124.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "master",
-  },
-
-  {
-    name: "Wooden Dummy",
-    slug: "wooden-dummy",
-    price: 104.99,
-    excerpt: "Something that you trully need, but haven’t know about it yet",
-    imageUrl: "images/products/dummy.svg",
-    description:
-      "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
-    tag: "popular",
-  },
-]
-
 module.exports = {
   siteMetadata: {
     title: "BEJAMAS | GATSBY SHOP",
     description: "",
     author: "@bejamasio",
-    data: dummyData,
+    data: getDummyData(),
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -107,4 +32,81 @@ module.exports = {
       },
     },
   ],
+}
+
+function getDummyData() {
+  return [
+    {
+      name: "Basic Dummy X",
+      slug: "basic-dummy-x",
+      price: 49.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "starter",
+    },
+    {
+      name: "Basic Dummy",
+      slug: "basic-dummy",
+      price: 29.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "starter",
+    },
+    {
+      name: "Dummy Club",
+      slug: "dummy-club",
+      price: 79.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "classic",
+    },
+    {
+      name: "Dummy X Pro",
+      slug: "dummy-x-pro",
+      price: 149.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "master",
+    },
+    {
+      name: "Great Dummy",
+      slug: "great-dummy",
+      price: 104.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "popular",
+    },
+
+    {
+      name: "Wooden Dummy Pro",
+      slug: "wooden-dummy-pro",
+      price: 124.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "master",
+    },
+
+    {
+      name: "Wooden Dummy",
+      slug: "wooden-dummy",
+      price: 104.99,
+      excerpt: "Something that you trully need, but haven’t know about it yet",
+      imageUrl: "images/products/dummy.svg",
+      description:
+        "Something that you trully need, but haven’t know about it yet. Multiple winner of Community Awarads.",
+      tag: "popular",
+    },
+  ]
 }

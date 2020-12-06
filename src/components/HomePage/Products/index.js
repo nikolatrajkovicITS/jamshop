@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 
 import ProductCard from "../../Common/ProductCard"
+import ScrollBtn from "../../Common/ScrollBtn"
 
 function Products({ handleAddProduct }) {
   const productsListRef = useRef()
@@ -44,20 +45,16 @@ function Products({ handleAddProduct }) {
         </p>
       </div>
       <div className="arrow-btns-wrapper">
-        <button
-          onClick={e => scrollProducts(e, false)}
-          className="arrow-btn arrow-btn-left"
-          type="button"
-        >
-          <span className="material-icons md-33">keyboard_arrow_left</span>
-        </button>
-        <button
-          onClick={e => scrollProducts(e, true)}
-          className="arrow-btn arrow-btn-right"
-          type="button"
-        >
-          <span className="material-icons md-33">keyboard_arrow_right</span>
-        </button>
+        <ScrollBtn
+          isRight={false}
+          cssClass="arrow-btn-left"
+          handleScroll={scrollProducts}
+        />
+        <ScrollBtn
+          isRight
+          cssClass="arrow-btn-right"
+          handleScroll={scrollProducts}
+        />
       </div>
       <div className="products" ref={productsListRef}>
         {site.siteMetadata.data.map(product => (
